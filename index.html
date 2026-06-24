@@ -40,6 +40,14 @@
 
 <div class="tabs">
     <button class="tab-btn active" onclick="switchView('general')">🏆 General</button>
+    <button class="tab-btn" onclick="switchView('sword')">⚔️ Sword</button>
+    <button class="tab-btn" onclick="switchView('uhc')">🍎 UHC</button>
+    <button class="tab-btn" onclick="switchView('axe')">🪓 Axe</button>
+    <button class="tab-btn" onclick="switchView('crystal')">🔮 Crystal</button>
+    <button class="tab-btn" onclick="switchView('smp')">🌍 SMP</button>
+    <button class="tab-btn" onclick="switchView('mazo')">🔨 Mazo</button>
+    <button class="tab-btn" onclick="switchView('nether')">🔥 Nether Pot</button>
+    <button class="tab-btn" onclick="switchView('pot')">🧪 Pot</button>
 </div>
 
 <div id="view-general">
@@ -54,6 +62,60 @@
             </div>
             <div class="tags">
                 <span class="tag" style="color:#4ade80">⚔️ LT1</span>
+                <span class="tag" style="color:#facc15">🍎 LT3</span>
+                <span class="tag" style="color:#f87171">🪓 LT5</span>
+                <span class="tag" style="color:#fb923c">🔮 LT3</span>
+                <span class="tag" style="color:#fb923c">🔨 LT4</span>
+                <span class="tag" style="color:#f87171">🧪 LT5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asasin -->
+    <div class="player-card">
+        <div class="rank-number">#2</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
+        <div class="info">
+            <div class="name-row">
+                <div class="name">Asasin</div>
+                <div class="points-badge">34 Pts</div>
+            </div>
+            <div class="tags">
+                <span class="tag" style="color:#facc15">⚔️ LT3</span>
+                <span class="tag" style="color:#f87171">🍎 LT5</span>
+                <span class="tag" style="color:#f87171">🪓 LT4</span>
+                <span class="tag" style="color:#fb923c">🔮 LT5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ryou -->
+    <div class="player-card">
+        <div class="rank-number">#3</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
+        <div class="info">
+            <div class="name-row">
+                <div class="name">Ryou</div>
+                <div class="points-badge">14 Pts</div>
+            </div>
+            <div class="tags">
+                <span class="tag" style="color:#f87171">⚔️ LT5</span>
+                <span class="tag" style="color:#fb923c">🧪 LT4</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conter -->
+    <div class="player-card">
+        <div class="rank-number">#4</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
+        <div class="info">
+            <div class="name-row">
+                <div class="name">Conter</div>
+                <div class="points-badge">10 Pts</div>
+            </div>
+            <div class="tags">
+                <span class="tag" style="color:#fb923c">⚔️ LT4</span>
             </div>
         </div>
     </div>
@@ -61,7 +123,7 @@
     <!-- LastNight -->
     <div class="player-card">
         <div class="rank-number">#5</div>
-        <div class="avatar-skin"><img src="https://i.imgur.com/15cJ2d2.jpeg" alt="Skin"></div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
         <div class="info">
             <div class="name-row">
                 <div class="name">LastNight</div>
@@ -72,6 +134,22 @@
             </div>
         </div>
     </div>
+
+    <!-- Perritos Calientes -->
+    <div class="player-card">
+        <div class="rank-number">#6</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
+        <div class="info">
+            <div class="name-row">
+                <div class="name">Perritos Calientes</div>
+                <div class="points-badge">8 Pts</div>
+            </div>
+            <div class="tags">
+                <span class="tag" style="color:#f87171">⚔️ LT5</span>
+                <span class="tag" style="color:#f87171">🔨 LT5</span>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -79,7 +157,9 @@
         const buttons = document.querySelectorAll('.tab-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
-        document.getElementById('view-general').style.display = 'block';
+        const views = ['general', 'sword', 'uhc', 'axe', 'crystal', 'smp', 'mazo', 'nether', 'pot'];
+        views.forEach(mode => document.getElementById('view-' + mode).style.display = 'none');
+        document.getElementById('view-' + targetMode).style.display = 'block';
     }
 </script>
 </body>
