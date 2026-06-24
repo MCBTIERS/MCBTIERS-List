@@ -18,7 +18,7 @@
         .rank-number { font-size: 1.8rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 40px; text-align: center; }
         .avatar { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .avatar img { width: 100%; height: 100%; object-fit: contain; }
-        /* Nueva clase para tu skin */
+        /* Clase para skins personalizadas */
         .avatar-skin { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .avatar-skin img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -42,7 +42,6 @@
 
 <h1>MCB TIERS</h1>
 
-<!-- Botones de Modalidades -->
 <div class="tabs">
     <button class="tab-btn active" onclick="switchView('general')">🏆 General</button>
     <button class="tab-btn" onclick="switchView('sword')">⚔️ Sword</button>
@@ -55,9 +54,7 @@
     <button class="tab-btn" onclick="switchView('pot')">🧪 Pot</button>
 </div>
 
-<!-- VISTA GENERAL -->
 <div id="view-general">
-    <!-- KRONOS OG -->
     <div class="player-card">
         <div class="rank-number">#1</div>
         <div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg" alt="Skin"></div>
@@ -77,7 +74,6 @@
         </div>
     </div>
 
-    <!-- LastNight -->
     <div class="player-card">
         <div class="rank-number">#2</div>
         <div class="avatar-skin"><img src="https://i.postimg.cc/G9hFsp40/1000125162.jpg" alt="Skin"></div>
@@ -92,7 +88,6 @@
         </div>
     </div>
 
-    <!-- Asasin -->
     <div class="player-card">
         <div class="rank-number">#3</div>
         <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
@@ -110,7 +105,6 @@
         </div>
     </div>
 
-    <!-- Ryou -->
     <div class="player-card">
         <div class="rank-number">#4</div>
         <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
@@ -126,7 +120,6 @@
         </div>
     </div>
 
-    <!-- Conter -->
     <div class="player-card">
         <div class="rank-number">#5</div>
         <div class="avatar-skin"><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg" alt="Conter Skin"></div>
@@ -141,7 +134,6 @@
         </div>
     </div>
 
-    <!-- Perritos Calientes -->
     <div class="player-card">
         <div class="rank-number">#6</div>
         <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
@@ -158,81 +150,20 @@
     </div>
 </div>
 
-<!-- VISTAS ESPECÍFICAS -->
-<div id="view-sword" style="display: none;">
-    <div class="specific-list">
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg"></div><div class="spec-name">KRONOS OG1567</div></div><div class="spec-tag" style="color:#4ade80">LT1</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Asasin</div></div><div class="spec-tag" style="color:#facc15">LT3</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg"></div><div class="spec-name">Conter</div></div><div class="spec-tag" style="color:#fb923c">LT4</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Ryou</div></div><div class="spec-tag" style="color:#f87171">LT5</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Perritos Calientes</div></div><div class="spec-tag" style="color:#f87171">LT5</div></div>
-    </div>
-</div>
-
-<div id="view-uhc" style="display: none;">
-    <div class="specific-list">
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg"></div><div class="spec-name">KRONOS OG1567</div></div><div class="spec-tag" style="color:#facc15">LT3</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.postimg.cc/G9hFsp40/1000125162.jpg"></div><div class="spec-name">LastNight</div></div><div class="spec-tag" style="color:#fb923c">LT4</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Asasin</div></div><div class="spec-tag" style="color:#f87171">LT5</div></div>
-    </div>
-</div>
-
-<div id="view-axe" style="display: none;">
-    <div class="specific-list">
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Asasin</div></div><div class="spec-tag" style="color:#f87171">LT4</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg"></div><div class="spec-name">KRONOS OG1567</div></div><div class="spec-tag" style="color:#f87171">LT5</div></div>
-    </div>
-</div>
-
-<div id="view-crystal" style="display: none;">
-    <div class="specific-list">
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg"></div><div class="spec-name">KRONOS OG1567</div></div><div class="spec-tag" style="color:#fb923c">LT3</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Asasin</div></div><div class="spec-tag" style="color:#fb923c">LT5</div></div>
-    </div>
-</div>
-
-<div id="view-smp" style="display: none;">
-    <div class="specific-list">
-        <p style="text-align: center; color: #888;">Nadie tiene rango en SMP todavía.</p>
-    </div>
-</div>
-
-<div id="view-mazo" style="display: none;">
-    <div class="specific-list">
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg"></div><div class="spec-name">KRONOS OG1567</div></div><div class="spec-tag" style="color:#fb923c">LT4</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Perritos Calientes</div></div><div class="spec-tag" style="color:#f87171">LT5</div></div>
-    </div>
-</div>
-
-<div id="view-nether" style="display: none;">
-    <div class="specific-list">
-        <p style="text-align: center; color: #888;">Nadie tiene rango en Nether Pot todavía.</p>
-    </div>
-</div>
-
-<div id="view-pot" style="display: none;">
-    <div class="specific-list">
-        <div class="spec-card"><div class="spec-left"><div class="avatar"><img src="https://mc-heads.net/avatar/Steve"></div><div class="spec-name">Ryou</div></div><div class="spec-tag" style="color:#fb923c">LT4</div></div>
-        <div class="spec-card"><div class="spec-left"><div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg"></div><div class="spec-name">KRONOS OG1567</div></div><div class="spec-tag" style="color:#f87171">LT5</div></div>
-    </div>
-</div>
-
 <script>
     function switchView(targetMode) {
         const buttons = document.querySelectorAll('.tab-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
-
         const views = ['general', 'sword', 'uhc', 'axe', 'crystal', 'smp', 'mazo', 'nether', 'pot'];
         views.forEach(mode => {
             const el = document.getElementById('view-' + mode);
             if(el) el.style.display = 'none';
         });
-
-        document.getElementById('view-' + targetMode).style.display = 'block';
+        const target = document.getElementById('view-' + targetMode);
+        if(target) target.style.display = 'block';
     }
 </script>
-
 </body>
-                    </html>
-                                
+            </html>
+            
