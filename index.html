@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCB Tiers | Lista Oficial</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0e14;
+            color: #e1e7ef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 2.2rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Menú de pestañas con scroll horizontal para móvil */
+        .tabs-container {
+            display: flex;
+            gap: 8px;
+            max-width: 650px;
+            width: 100%;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            scrollbar-width: thin;
+        }
+
+        .tab-btn {
+            background-color: #1e293b;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+        }
+
+        /* Contenedor de la Tabla */
+        .tier-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .table-view {
+            display: none;
+        }
+
+        .table-view.active {
+            display: block;
+        }
+
+        /* Filas de Jugadores */
+        .player-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1f2937;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid transparent;
+        }
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .player-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background-color: #0b0e14;
+        }
+
+        .player-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .region-badge {
+            color: #64748b;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .rank-badge {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Colores de Rangos y Puntos */
+        .badge-pts { background-color: #0ea5e9; color: #fff; }
+        .badge-lt1 { background-color: #22c55e; color: #fff; }
+        .badge-lt3 { background-color: #eab308; color: #000; }
+        .badge-lt4 { background-color: #f97316; color: #fff; }
+        .badge-lt5 { background-color: #ef4444; color: #fff; }
+        .badge-sr { background-color: #475569; color: #cbd5e1; }
+    </style>
+</head>
+<body>
+
+    <h1>MCB TIERS</h1>
+    <p class="subtitle">Lista y Ranking de Clasificación de Jugadores</p>
+
+    <div class="tabs-container">
+        <button class="tab-btn active" onclick="switchTab('general')">🏆 Tier General</button>
+        <button class="tab-btn" onclick="switchTab('sword')">⚔️ Sword</button>
+        <button class="tab-btn" onclick="switchTab('uhc')">🍎 UHC</button>
+        <button class="tab-btn" onclick="switchTab('axe')">🪓 Axe</button>
+        <button class="tab-btn" onclick="switchTab('smp')">🌍 SMP</button>
+        <button class="tab-btn" onclick="switchTab('mazo')">🔨 Mazo</button>
+        <button class="tab-btn" onclick="switchTab('pot')">🧪 Pot</button>
+    </div>
+
+    <div class="tier-container">
+        
+        <div id="general" class="table-view active">
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
+                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-pts">96 pts</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
+                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-pts">34 pts</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
+                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-pts">14 pts</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
+                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-pts">10 pts</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/LastNight" alt="Avatar">
+                    <div><div class="player-name">LastNight</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-pts">10 pts</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Perritos_Frios" alt="Avatar">
+                    <div><div class="player-name">Perritos Frios</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-pts">8 pts</div>
+            </div>
+        </div>
+
+        <div id="sword" class="table-view">
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
+                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt1">lt1</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
+                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt3">lt3</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
+                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt5">lt5</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
+                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt4">lt4</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/LastNight" alt="Avatar">
+                    <div><div class="player-name">LastNight</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-sr">Sin Rango</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Perritos_Frios" alt="Avatar">
+                    <div><div class="player-name">Perritos Frios</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt5">lt5</div>
+            </div>
+        </div>
+
+        <div id="uhc" class="table-view">
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
+                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt3">lt3</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
+                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt5">lt5</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
+                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-sr">Sin Rango</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
+                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-sr">Sin Rango</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/LastNight" alt="Avatar">
+                    <div><div class="player-name">LastNight</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt4">lt4</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Perritos_Frios" alt="Avatar">
+                    <div><div class="player-name">Perritos Frios</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-sr">Sin Rango</div>
+            </div>
+        </div>
+
+        <div id="axe" class="table-view">
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
+                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt5">lt5</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
+                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt4">lt4</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
+                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-sr">Sin Rango</div>
+            </div>
+            </div>
+
+        <div id="smp" class="table-view">
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
+                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt4">lt4</div>
+            </div>
+        </div>
+
+        <div id="mazo" class="table-view">
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
+                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt5">lt5</div>
+            </div>
+        </div>
+
+        <div id="pot" class="table-view">
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
+                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt5">lt5</div>
+            </div>
+            <div class="player-row">
+                <div class="player-info">
+                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
+                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
+                </div>
+                <div class="rank-badge badge-lt4">lt4</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Desactivar botones anteriores
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            // Ocultar vistas anteriores
+            document.querySelectorAll('.table-view').forEach(view => view.classList.remove('active'));
+            
+            // Activar actual
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+  </html>
+  
