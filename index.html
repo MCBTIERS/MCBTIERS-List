@@ -9,15 +9,19 @@
         h1 { text-align: center; color: #ffffff; margin-bottom: 20px; }
         .tabs { display: flex; gap: 8px; margin-bottom: 25px; overflow-x: auto; justify-content: center; flex-wrap: wrap; max-width: 800px; margin-left: auto; margin-right: auto; }
         .tab-btn { background: #161b22; border: 1px solid #30363d; color: white; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
-        .tab-btn.active { background: #30363d; border-color: #4a5568; }
-        .player-card { background: #161b22; border-radius: 12px; display: flex; align-items: center; padding: 15px; margin-bottom: 10px; border: 1px solid #30363d; width: 100%; max-width: 550px; margin-left: auto; margin-right: auto; }
-        .rank-number { font-size: 1.5rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 40px; text-align: center; }
-        .avatar-skin { width: 50px; height: 50px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .tab-btn.active, .tab-btn:hover { background: #30363d; border-color: #4a5568; }
+        .player-card { background: #161b22; border-radius: 12px; display: flex; align-items: center; padding: 15px; margin-bottom: 15px; border: 1px solid #30363d; width: 100%; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .rank-number { font-size: 1.8rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 40px; text-align: center; }
+        .avatar-skin { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .avatar-skin img { width: 100%; height: 100%; object-fit: cover; }
+        .avatar { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .avatar img { width: 100%; height: 100%; object-fit: contain; }
         .info { flex-grow: 1; }
-        .name-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-        .name { font-size: 1.1rem; font-weight: bold; }
-        .pts { font-size: 0.8rem; background: #0284c7; padding: 2px 8px; border-radius: 10px; font-weight: bold; }
+        .name-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .name { font-size: 1.2rem; font-weight: bold; }
+        .points-badge { font-size: 0.75rem; background: #0284c7; padding: 4px 8px; border-radius: 12px; font-weight: bold; color: #ffffff; }
+        .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+        .tag { font-size: 0.75rem; font-weight: bold; padding: 5px 10px; border-radius: 8px; display: flex; align-items: center; gap: 4px; background: #21262d; border: 1px solid #30363d; }
     </style>
 </head>
 <body>
@@ -26,69 +30,44 @@
 
 <div class="tabs">
     <button class="tab-btn active" onclick="switchView('general')">🏆 General</button>
+    <button class="tab-btn" onclick="switchView('sword')">⚔️ Sword</button>
+    <button class="tab-btn" onclick="switchView('uhc')">🍎 UHC</button>
+    <button class="tab-btn" onclick="switchView('axe')">🪓 Axe</button>
+    <button class="tab-btn" onclick="switchView('crystal')">🔮 Crystal</button>
+    <button class="tab-btn" onclick="switchView('smp')">🌍 SMP</button>
+    <button class="tab-btn" onclick="switchView('mazo')">🔨 Mazo</button>
+    <button class="tab-btn" onclick="switchView('nether')">🔥 Nether Pot</button>
+    <button class="tab-btn" onclick="switchView('pot')">🧪 Pot</button>
 </div>
 
 <div id="view-general">
-    <!-- Puesto #1: TÚ -->
+    <!-- Tu puesto #1 con tu skin -->
     <div class="player-card">
         <div class="rank-number">#1</div>
-        <div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg" alt="KRONOS OG"></div>
+        <div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg" alt="Skin"></div>
         <div class="info">
             <div class="name-row">
                 <div class="name">KRONOS OG1567</div>
-                <div class="pts">106 Pts</div>
+                <div class="points-badge">106 Pts</div>
+            </div>
+            <div class="tags">
+                <span class="tag" style="color:#4ade80">⚔️ LT1</span> <span class="tag" style="color:#facc15">🍎 LT3</span> <span class="tag" style="color:#f87171">🪓 LT5</span>
             </div>
         </div>
     </div>
-    <!-- Puesto #2: Asasin -->
-    <div class="player-card">
-        <div class="rank-number">#2</div>
-        <div class="avatar-skin"><img src="https://mc-heads.net/avatar/Asasin" alt="Asasin"></div>
-        <div class="info">
-            <div class="name-row">
-                <div class="name">Asasin</div>
-                <div class="pts">34 Pts</div>
-            </div>
-        </div>
-    </div>
-    <!-- Puesto #3: Ryou -->
-    <div class="player-card">
-        <div class="rank-number">#3</div>
-        <div class="avatar-skin"><img src="https://mc-heads.net/avatar/Ryou" alt="Ryou"></div>
-        <div class="info">
-            <div class="name-row">
-                <div class="name">Ryou</div>
-                <div class="pts">14 Pts</div>
-            </div>
-        </div>
-    </div>
-    <!-- Puesto #4: Conter -->
-    <div class="player-card">
-        <div class="rank-number">#4</div>
-        <div class="avatar-skin"><img src="https://mc-heads.net/avatar/Conter" alt="Conter"></div>
-        <div class="info">
-            <div class="name-row">
-                <div class="name">Conter</div>
-                <div class="pts">10 Pts</div>
-            </div>
-        </div>
-    </div>
-    <!-- Puesto #5: LastNight -->
-    <div class="player-card">
-        <div class="rank-number">#5</div>
-        <div class="avatar-skin"><img src="https://mc-heads.net/avatar/LastNight" alt="LastNight"></div>
-        <div class="info">
-            <div class="name-row">
-                <div class="name">LastNight</div>
-                <div class="pts">10 Pts</div>
-            </div>
-        </div>
-    </div>
+    <!-- Demás jugadores -->
+    <div class="player-card"><div class="rank-number">#2</div><div class="avatar"><img src="https://mc-heads.net/avatar/Asasin"></div><div class="info"><div class="name-row"><div class="name">Asasin</div><div class="points-badge">34 Pts</div></div></div></div>
+    <div class="player-card"><div class="rank-number">#3</div><div class="avatar"><img src="https://mc-heads.net/avatar/Ryou"></div><div class="info"><div class="name-row"><div class="name">Ryou</div><div class="points-badge">14 Pts</div></div></div></div>
+    <div class="player-card"><div class="rank-number">#4</div><div class="avatar"><img src="https://mc-heads.net/avatar/Conter"></div><div class="info"><div class="name-row"><div class="name">Conter</div><div class="points-badge">10 Pts</div></div></div></div>
 </div>
 
 <script>
-    function switchView(target) {
-        // Lógica de pestañas
+    function switchView(targetMode) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+        // Esto simplifica la lógica para que siempre funcione
+        document.getElementById('view-general').style.display = (targetMode === 'general') ? 'block' : 'none';
+        // Puedes agregar más lógica aquí si necesitas otras vistas
     }
 </script>
 
