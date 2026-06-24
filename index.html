@@ -8,69 +8,64 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b0e14;
-            color: #e1e7ef;
+            background-color: #11141a;
+            color: #f1f5f9;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         h1 {
-            color: #ffffff;
-            margin-top: 10px;
-            margin-bottom: 5px;
-            font-size: 2.2rem;
-            text-align: center;
+            font-size: 1.8rem;
+            margin: 15px 0 5px 0;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .subtitle {
             color: #64748b;
-            margin-bottom: 25px;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
             text-align: center;
         }
 
-        /* Menú de pestañas con scroll horizontal para móvil */
+        /* Menú de pestañas estilo MCTiers */
         .tabs-container {
             display: flex;
-            gap: 8px;
-            max-width: 650px;
+            gap: 5px;
+            max-width: 600px;
             width: 100%;
             overflow-x: auto;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            scrollbar-width: thin;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            scrollbar-width: none;
         }
+        .tabs-container::-webkit-scrollbar { display: none; }
 
         .tab-btn {
-            background-color: #1e293b;
+            background-color: #1a1f29;
             color: #94a3b8;
-            border: 1px solid #334155;
-            padding: 8px 16px;
+            border: 1px solid #242b38;
+            padding: 10px 18px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: bold;
+            font-size: 0.9rem;
             white-space: nowrap;
             transition: all 0.2s;
         }
 
         .tab-btn.active {
-            background-color: #38bdf8;
-            color: #0f172a;
+            background-color: #2e3748;
+            color: #fff;
             border-color: #38bdf8;
         }
 
-        /* Contenedor de la Tabla */
+        /* Contenedor principal */
         .tier-container {
             width: 100%;
-            max-width: 600px;
-            background-color: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            max-width: 550px;
         }
 
         .table-view {
@@ -78,69 +73,141 @@
         }
 
         .table-view.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        /* Filas de Jugadores */
-        .player-row {
+        /* Tarjeta de Jugador Estilo MCTiers */
+        .player-card {
+            background: linear-gradient(135deg, #1e2530 0%, #151a22 100%);
+            border: 1px solid #2d3748;
+            border-radius: 12px;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #1f2937;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            border: 1px solid transparent;
+            position: relative;
+            height: 110px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .player-info {
+        /* Contenedor del Cuerpo/Avatar a la mitad */
+        .avatar-box {
+            width: 110px;
+            height: 110px;
+            position: relative;
+            background-color: #1a202c;
             display: flex;
-            align-items: center;
-            gap: 15px;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: hidden;
+            border-right: 1px solid #2d3748;
         }
 
         .player-avatar {
-            width: 42px;
-            height: 42px;
-            border-radius: 8px;
-            background-color: #0b0e14;
+            width: 140px; /* Grande para recortar */
+            height: 140px;
+            object-fit: cover;
+            object-position: center 10px; /* Enfoca de la mitad para arriba */
+            position: absolute;
+            top: 0;
+        }
+
+        /* Número de posición gigante de fondo */
+        .rank-number {
+            position: absolute;
+            left: 10px;
+            bottom: -10px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.08);
+            z-index: 1;
+            line-height: 1;
+        }
+
+        /* Datos del jugador */
+        .player-details {
+            flex: 1;
+            padding: 12px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .top-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .player-name {
-            font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
         }
 
         .region-badge {
-            color: #64748b;
-            font-size: 0.85rem;
+            background-color: #ef4444; /* Rojo para NA */
+            color: #fff;
+            font-size: 0.75rem;
             font-weight: bold;
+            padding: 3px 6px;
+            border-radius: 4px;
         }
 
-        .rank-badge {
-            padding: 5px 12px;
-            border-radius: 6px;
+        .score-text {
             font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* Mini lista de Tiers abajo del nombre */
+        .mini-tiers {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .mini-badge {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
             font-weight: bold;
             text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Colores de Rangos y Puntos */
-        .badge-pts { background-color: #0ea5e9; color: #fff; }
-        .badge-lt1 { background-color: #22c55e; color: #fff; }
-        .badge-lt3 { background-color: #eab308; color: #000; }
-        .badge-lt4 { background-color: #f97316; color: #fff; }
-        .badge-lt5 { background-color: #ef4444; color: #fff; }
-        .badge-sr { background-color: #475569; color: #cbd5e1; }
+        /* Badge grande para las pestañas de modalidades individuales */
+        .single-badge {
+            align-self: center;
+            margin-right: 20px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Estilos de rangos */
+        .b-lt1 { background-color: #22c55e; color: #fff; }
+        .b-lt3 { background-color: #eab308; color: #000; }
+        .b-lt4 { background-color: #f97316; color: #fff; }
+        .b-lt5 { background-color: #ef4444; color: #fff; }
+        .b-sr { background-color: #475569; color: #cbd5e1; }
+        .b-gen { background-color: #0ea5e9; color: #fff; border-radius: 6px; padding: 2px 6px; }
     </style>
 </head>
 <body>
 
     <h1>MCB TIERS</h1>
-    <p class="subtitle">Lista y Ranking de Clasificación de Jugadores</p>
+    <p class="subtitle">Clasificación de los mejores jugadores de Bedrock PvP</p>
 
+    <!-- Menú de Pestañas -->
     <div class="tabs-container">
-        <button class="tab-btn active" onclick="switchTab('general')">🏆 Tier General</button>
+        <button class="tab-btn active" onclick="switchTab('general')">🏆 General</button>
         <button class="tab-btn" onclick="switchTab('sword')">⚔️ Sword</button>
         <button class="tab-btn" onclick="switchTab('uhc')">🍎 UHC</button>
         <button class="tab-btn" onclick="switchTab('axe')">🪓 Axe</button>
@@ -151,216 +218,157 @@
 
     <div class="tier-container">
         
+        <!-- VISTA: TIER GENERAL -->
         <div id="general" class="table-view active">
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
-                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
+            <!-- TOP 1: KRONOS OG -->
+            <div class="player-card">
+                <div class="avatar-box">
+                    <span class="rank-number">#1</span>
+                    <img class="player-avatar" src="kronos.jpg" alt="Avatar">
                 </div>
-                <div class="rank-badge badge-pts">96 pts</div>
+                <div class="player-details">
+                    <div class="top-line">
+                        <span class="player-name">KRONOS OG</span>
+                        <span class="region-badge">NA</span>
+                    </div>
+                    <div class="score-text">Puntos Globales: <span class="b-gen">106 Pts</span></div>
+                    <div class="mini-tiers">
+                        <div class="mini-badge b-lt1" title="Sword">lt1</div>
+                        <div class="mini-badge b-lt3" title="UHC">lt3</div>
+                        <div class="mini-badge b-lt5" title="Axe">lt5</div>
+                        <div class="mini-badge b-lt4" title="SMP">lt4</div>
+                        <div class="mini-badge b-lt4" title="Mazo">lt4</div>
+                        <div class="mini-badge b-lt5" title="Pot">lt5</div>
+                    </div>
+                </div>
             </div>
-            <div class="player-row">
-                <div class="player-info">
+
+            <!-- TOP 2: ASASIN -->
+            <div class="player-card">
+                <div class="avatar-box">
+                    <span class="rank-number">#2</span>
                     <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
-                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
                 </div>
-                <div class="rank-badge badge-pts">34 pts</div>
+                <div class="player-details">
+                    <div class="top-line">
+                        <span class="player-name">Asasin</span>
+                        <span class="region-badge">NA</span>
+                    </div>
+                    <div class="score-text">Puntos Globales: <span class="b-gen">34 Pts</span></div>
+                    <div class="mini-tiers">
+                        <div class="mini-badge b-lt3" title="Sword">lt3</div>
+                        <div class="mini-badge b-lt5" title="UHC">lt5</div>
+                        <div class="mini-badge b-lt4" title="Axe">lt4</div>
+                    </div>
+                </div>
             </div>
-            <div class="player-row">
-                <div class="player-info">
+
+            <!-- TOP 3: RYOU -->
+            <div class="player-card">
+                <div class="avatar-box">
+                    <span class="rank-number">#3</span>
                     <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
-                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
                 </div>
-                <div class="rank-badge badge-pts">14 pts</div>
+                <div class="player-details">
+                    <div class="top-line">
+                        <span class="player-name">Ryou</span>
+                        <span class="region-badge">NA</span>
+                    </div>
+                    <div class="score-text">Puntos Globales: <span class="b-gen">14 Pts</span></div>
+                    <div class="mini-tiers">
+                        <div class="mini-badge b-lt5" title="Sword">lt5</div>
+                    </div>
+                </div>
             </div>
-            <div class="player-row">
-                <div class="player-info">
+
+            <!-- TOP 4: CONTER -->
+            <div class="player-card">
+                <div class="avatar-box">
+                    <span class="rank-number">#4</span>
                     <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
-                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
                 </div>
-                <div class="rank-badge badge-pts">10 pts</div>
+                <div class="player-details">
+                    <div class="top-line">
+                        <span class="player-name">Conter</span>
+                        <span class="region-badge">NA</span>
+                    </div>
+                    <div class="score-text">Puntos Globales: <span class="b-gen">10 Pts</span></div>
+                    <div class="mini-tiers">
+                        <div class="mini-badge b-lt4" title="Sword">lt4</div>
+                        <div class="mini-badge b-lt5" title="Mazo">lt5</div>
+                        <div class="mini-badge b-lt4" title="Pot">lt4</div>
+                    </div>
+                </div>
             </div>
-            <div class="player-row">
-                <div class="player-info">
+
+            <!-- TOP 5: LASTNIGHT -->
+            <div class="player-card">
+                <div class="avatar-box">
+                    <span class="rank-number">#5</span>
                     <img class="player-avatar" src="https://mc-heads.net/avatar/LastNight" alt="Avatar">
-                    <div><div class="player-name">LastNight</div><span class="region-badge">NA</span></div>
                 </div>
-                <div class="rank-badge badge-pts">10 pts</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Perritos_Frios" alt="Avatar">
-                    <div><div class="player-name">Perritos Frios</div><span class="region-badge">NA</span></div>
+                <div class="player-details">
+                    <div class="top-line">
+                        <span class="player-name">LastNight</span>
+                        <span class="region-badge">NA</span>
+                    </div>
+                    <div class="score-text">Puntos Globales: <span class="b-gen">10 Pts</span></div>
+                    <div class="mini-tiers">
+                        <div class="mini-badge b-lt4" title="UHC">lt4</div>
+                    </div>
                 </div>
-                <div class="rank-badge badge-pts">8 pts</div>
             </div>
         </div>
 
+        <!-- VISTA: SWORD -->
         <div id="sword" class="table-view">
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
-                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt1">lt1</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
-                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt3">lt3</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
-                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt5">lt5</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
-                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt4">lt4</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/LastNight" alt="Avatar">
-                    <div><div class="player-name">LastNight</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-sr">Sin Rango</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Perritos_Frios" alt="Avatar">
-                    <div><div class="player-name">Perritos Frios</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt5">lt5</div>
-            </div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="kronos.jpg"></div><div class="player-details"><span class="player-name">KRONOS OG</span></div><div class="single-badge b-lt1">LT1</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/Asasin"></div><div class="player-details"><span class="player-name">Asasin</span></div><div class="single-badge b-lt3">LT3</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/Conter"></div><div class="player-details"><span class="player-name">Conter</span></div><div class="single-badge b-lt4">LT4</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/Ryou"></div><div class="player-details"><span class="player-name">Ryou</span></div><div class="single-badge b-lt5">LT5</div></div>
         </div>
 
+        <!-- VISTA: UHC -->
         <div id="uhc" class="table-view">
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
-                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt3">lt3</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
-                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt5">lt5</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
-                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-sr">Sin Rango</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
-                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-sr">Sin Rango</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/LastNight" alt="Avatar">
-                    <div><div class="player-name">LastNight</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt4">lt4</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Perritos_Frios" alt="Avatar">
-                    <div><div class="player-name">Perritos Frios</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-sr">Sin Rango</div>
-            </div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="kronos.jpg"></div><div class="player-details"><span class="player-name">KRONOS OG</span></div><div class="single-badge b-lt3">LT3</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/LastNight"></div><div class="player-details"><span class="player-name">LastNight</span></div><div class="single-badge b-lt4">LT4</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/Asasin"></div><div class="player-details"><span class="player-name">Asasin</span></div><div class="single-badge b-lt5">LT5</div></div>
         </div>
 
+        <!-- VISTA: AXE -->
         <div id="axe" class="table-view">
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
-                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt5">lt5</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Asasin" alt="Avatar">
-                    <div><div class="player-name">Asasin</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt4">lt4</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Ryou" alt="Avatar">
-                    <div><div class="player-name">Ryou</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-sr">Sin Rango</div>
-            </div>
-            </div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/Asasin"></div><div class="player-details"><span class="player-name">Asasin</span></div><div class="single-badge b-lt4">LT4</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="kronos.jpg"></div><div class="player-details"><span class="player-name">KRONOS OG</span></div><div class="single-badge b-lt5">LT5</div></div>
+        </div>
 
+        <!-- VISTA: SMP -->
         <div id="smp" class="table-view">
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
-                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt4">lt4</div>
-            </div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="kronos.jpg"></div><div class="player-details"><span class="player-name">KRONOS OG</span></div><div class="single-badge b-lt4">LT4</div></div>
         </div>
 
+        <!-- VISTA: MAZO -->
         <div id="mazo" class="table-view">
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
-                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt5">lt5</div>
-            </div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="kronos.jpg"></div><div class="player-details"><span class="player-name">KRONOS OG</span></div><div class="single-badge b-lt4">LT4</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/Conter"></div><div class="player-details"><span class="player-name">Conter</span></div><div class="single-badge b-lt5">LT5</div></div>
         </div>
 
+        <!-- VISTA: POT -->
         <div id="pot" class="table-view">
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/KRONOS_OG" alt="Avatar">
-                    <div><div class="player-name">KRONOS OG</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt5">lt5</div>
-            </div>
-            <div class="player-row">
-                <div class="player-info">
-                    <img class="player-avatar" src="https://mc-heads.net/avatar/Conter" alt="Avatar">
-                    <div><div class="player-name">Conter</div><span class="region-badge">NA</span></div>
-                </div>
-                <div class="rank-badge badge-lt4">lt4</div>
-            </div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="https://mc-heads.net/avatar/Conter"></div><div class="player-details"><span class="player-name">Conter</span></div><div class="single-badge b-lt4">LT4</div></div>
+            <div class="player-card"><div class="avatar-box"><img class="player-avatar" src="kronos.jpg"></div><div class="player-details"><span class="player-name">KRONOS OG</span></div><div class="single-badge b-lt5">LT5</div></div>
         </div>
 
     </div>
 
     <script>
         function switchTab(tabId) {
-            // Desactivar botones anteriores
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            // Ocultar vistas anteriores
             document.querySelectorAll('.table-view').forEach(view => view.classList.remove('active'));
             
-            // Activar actual
             event.target.classList.add('active');
             document.getElementById(tabId).classList.add('active');
         }
     </script>
 </body>
-  </html>
-  
+                                                                    </html>
+    
