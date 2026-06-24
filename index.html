@@ -8,30 +8,20 @@
         body { background-color: #0d1117; color: white; font-family: sans-serif; padding: 20px; }
         h1 { text-align: center; color: #ffffff; margin-bottom: 20px; }
         .tabs { display: flex; gap: 8px; margin-bottom: 25px; overflow-x: auto; justify-content: center; flex-wrap: wrap; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .tab-btn { background: #161b22; border: 1px solid #30363d; color: white; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9rem; }
-        .tab-btn.active { background: #30363d; }
+        .tab-btn { background: #161b22; border: 1px solid #30363d; color: white; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .tab-btn.active, .tab-btn:hover { background: #30363d; border-color: #4a5568; }
         .player-card { background: #161b22; border-radius: 12px; display: flex; align-items: center; padding: 15px; margin-bottom: 15px; border: 1px solid #30363d; width: 100%; max-width: 550px; margin-left: auto; margin-right: auto; }
         .rank-number { font-size: 1.8rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 40px; text-align: center; }
-        
-        /* ESTILO PARA TU SKIN RENDERIZADA */
         .avatar-skin { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .avatar-skin img { width: 100%; height: 100%; object-fit: cover; }
-        
+        .avatar-skin img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
         .avatar { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .avatar img { width: 100%; height: 100%; object-fit: contain; }
-
         .info { flex-grow: 1; }
         .name-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
         .name { font-size: 1.2rem; font-weight: bold; }
-        .points-badge { font-size: 0.75rem; background: #0284c7; padding: 4px 8px; border-radius: 12px; font-weight: bold; }
+        .points-badge { font-size: 0.75rem; background: #0284c7; padding: 4px 8px; border-radius: 12px; font-weight: bold; color: #ffffff; }
         .tags { display: flex; gap: 6px; flex-wrap: wrap; }
         .tag { font-size: 0.75rem; font-weight: bold; padding: 5px 10px; border-radius: 8px; background: #21262d; border: 1px solid #30363d; }
-
-        .specific-list { display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .spec-card { background: #161b22; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; padding: 15px 25px; border: 1px solid #30363d; width: 100%; max-width: 400px; }
-        .spec-left { display: flex; align-items: center; gap: 15px; }
-        .spec-name { font-size: 1.2rem; font-weight: bold; }
-        .spec-tag { font-size: 1rem; font-weight: bold; padding: 6px 14px; border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -51,36 +41,32 @@
 </div>
 
 <div id="view-general">
-    <!-- TU SKIN -->
     <div class="player-card">
         <div class="rank-number">#1</div>
-        <div class="avatar-skin"><img src="https://i.postimg.cc/Y9zXhRk6/IMG-20260624-004434.jpg" alt="Skin"></div>
+        <!-- Tu skin desde Imgur -->
+        <div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg" alt="Skin"></div>
         <div class="info">
             <div class="name-row">
                 <div class="name">KRONOS OG1567</div>
                 <div class="points-badge">106 Pts</div>
             </div>
             <div class="tags">
-                <span class="tag" style="color:#4ade80">⚔️ LT1</span> <span class="tag" style="color:#facc15">🍎 LT3</span> <span class="tag" style="color:#f87171">🪓 LT5</span> <span class="tag" style="color:#fb923c">🔮 LT3</span> <span class="tag" style="color:#fb923c">🔨 LT4</span> <span class="tag" style="color:#f87171">🧪 LT5</span>
+                <span class="tag" style="color:#4ade80">⚔️ LT1</span> <span class="tag" style="color:#facc15">🍎 LT3</span> <span class="tag" style="color:#f87171">🪓 LT5</span>
             </div>
         </div>
     </div>
-    <!-- ... Resto de tarjetas mantienen avatar normal ... -->
     <div class="player-card">
         <div class="rank-number">#2</div>
-        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Skin"></div>
-        <div class="info"><div class="name-row"><div class="name">Asasin</div><div class="points-badge">34 Pts</div></div></div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Steve"></div>
+        <div class="info"><div class="name">Asasin</div></div>
     </div>
 </div>
 
-<!-- Resto de vistas... -->
 <script>
     function switchView(targetMode) {
-        const buttons = document.querySelectorAll('.tab-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
-        const views = ['general', 'sword', 'uhc', 'axe', 'crystal', 'smp', 'mazo', 'nether', 'pot'];
-        views.forEach(mode => document.getElementById('view-' + mode).style.display = 'none');
+        document.querySelectorAll('[id^="view-"]').forEach(v => v.style.display = 'none');
         document.getElementById('view-' + targetMode).style.display = 'block';
     }
 </script>
