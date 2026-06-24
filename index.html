@@ -5,80 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCB Tiers</title>
     <style>
-        body { background-color: #0d1117; color: white; font-family: sans-serif; padding: 10px; }
-        .player-card { background: #161b22; border-radius: 10px; display: flex; align-items: center; padding: 12px; margin-bottom: 10px; border: 1px solid #30363d; }
-        .rank-number { font-size: 1.5rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 35px; }
-        .avatar { width: 60px; height: 60px; background: #30363d; border-radius: 5px; margin-right: 15px; overflow: hidden; }
-        .avatar img { width: 100%; height: 100%; }
+        body { background-color: #0d1117; color: white; font-family: sans-serif; padding: 15px; }
+        /* Pestañas (Modalidades) */
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; justify-content: center; }
+        .tab-btn { background: #161b22; border: 1px solid #30363d; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem; }
+        .tab-btn.active, .tab-btn:hover { background: #30363d; border-color: #4a5568; }
+        
+        /* Tarjetas de Jugadores */
+        .player-card { background: #161b22; border-radius: 12px; display: flex; align-items: center; padding: 15px; margin-bottom: 15px; border: 1px solid #30363d; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .rank-number { font-size: 1.8rem; font-weight: bold; color: #f59e0b; margin-right: 20px; width: 40px; text-align: center; }
+        .avatar { width: 70px; height: 70px; background: #21262d; border-radius: 8px; margin-right: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
         .info { flex-grow: 1; }
-        .name { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
-        .tiers-row { display: flex; gap: 8px; flex-wrap: wrap; }
-        .tag { font-size: 0.7rem; font-weight: bold; padding: 3px 7px; border-radius: 12px; }
+        .name { font-size: 1.3rem; font-weight: bold; margin-bottom: 8px; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tag { font-size: 0.8rem; font-weight: bold; padding: 4px 10px; border-radius: 12px; color: black; }
     </style>
 </head>
 <body>
 
-<!-- KRONOS OG -->
-<div class="player-card">
-    <div class="rank-number">#1</div>
-    <div class="avatar"><img src="https://mc-heads.net/avatar/KRONOS_OG1567" alt="Avatar"></div>
-    <div class="info">
-        <div class="name">KRONOS OG1567</div>
-        <div class="tiers-row">
-            <span class="tag" style="background:#4ade80">LT1</span>
-            <span class="tag" style="background:#facc15">LT3</span>
-            <span class="tag" style="background:#ef4444">LT5</span>
+<div class="tabs">
+    <button class="tab-btn active" onclick="filter('all')">Overall</button>
+    <button class="tab-btn" onclick="filter('uhc')">UHC</button>
+    <button class="tab-btn" onclick="filter('sword')">Sword</button>
+</div>
+
+<div id="players-list">
+    <div class="player-card" data-modes="all uhc sword">
+        <div class="rank-number">#1</div>
+        <div class="avatar"><img src="https://mc-heads.net/body/KRONOS_OG" alt="Skin"></div>
+        <div class="info">
+            <div class="name">KRONOS OG1567</div>
+            <div class="tags">
+                <span class="tag" style="background:#4ade80">LT1</span>
+                <span class="tag" style="background:#facc15">LT3</span>
+                <span class="tag" style="background:#ef4444">LT5</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-card" data-modes="all sword">
+        <div class="rank-number">#2</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Steve"></div>
+        <div class="info">
+            <div class="name">Asasin</div>
+            <div class="tags">
+                <span class="tag" style="background:#facc15">LT3</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-card" data-modes="all">
+        <div class="rank-number">#3</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Steve"></div>
+        <div class="info">
+            <div class="name">Ryou</div>
+            <div class="tags">
+                <span class="tag" style="background:#ef4444">LT5</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-card" data-modes="all uhc">
+        <div class="rank-number">#4</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Steve"></div>
+        <div class="info">
+            <div class="name">Conter</div>
+            <div class="tags">
+                <span class="tag" style="background:#fb923c">LT4</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-card" data-modes="all uhc">
+        <div class="rank-number">#5</div>
+        <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Steve"></div>
+        <div class="info">
+            <div class="name">LastNight</div>
+            <div class="tags">
+                <span class="tag" style="background:#fb923c">LT4</span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Asasin -->
-<div class="player-card">
-    <div class="rank-number">#2</div>
-    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
-    <div class="info">
-        <div class="name">Asasin</div>
-        <div class="tiers-row">
-            <span class="tag" style="background:#facc15">LT3</span>
-        </div>
-    </div>
-</div>
+<script>
+    function filter(mode) {
+        // Cambiar estilo de botones activos
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
 
-<!-- Ryou -->
-<div class="player-card">
-    <div class="rank-number">#3</div>
-    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
-    <div class="info">
-        <div class="name">Ryou</div>
-        <div class="tiers-row">
-            <span class="tag" style="background:#ef4444">LT5</span>
-        </div>
-    </div>
-</div>
-
-<!-- Conter -->
-<div class="player-card">
-    <div class="rank-number">#4</div>
-    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
-    <div class="info">
-        <div class="name">Conter</div>
-        <div class="tiers-row">
-            <span class="tag" style="background:#fb923c">LT4</span>
-        </div>
-    </div>
-</div>
-
-<!-- LastNight -->
-<div class="player-card">
-    <div class="rank-number">#5</div>
-    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
-    <div class="info">
-        <div class="name">LastNight</div>
-        <div class="tiers-row">
-            <span class="tag" style="background:#fb923c">LT4</span>
-        </div>
-    </div>
-</div>
+        // Filtrar tarjetas
+        const cards = document.querySelectorAll('.player-card');
+        cards.forEach(card => {
+            const modes = card.getAttribute('data-modes');
+            if (mode === 'all' || modes.includes(mode)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
