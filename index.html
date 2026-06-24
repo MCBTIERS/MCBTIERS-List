@@ -2,53 +2,82 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCB Tiers</title>
     <style>
         body { background-color: #0d1117; color: white; font-family: sans-serif; padding: 10px; }
-        .tabs { display: flex; gap: 10px; margin-bottom: 15px; overflow-x: auto; }
-        .tab-btn { background: #30363d; border: none; color: white; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
         .player-card { background: #161b22; border-radius: 10px; display: flex; align-items: center; padding: 12px; margin-bottom: 10px; border: 1px solid #30363d; }
-        .rank-number { font-size: 1.5rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 30px; }
-        .avatar { width: 60px; height: 60px; background: #000; border-radius: 5px; margin-right: 15px; overflow: hidden; }
-        .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .rank-number { font-size: 1.5rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 35px; }
+        .avatar { width: 60px; height: 60px; background: #30363d; border-radius: 5px; margin-right: 15px; overflow: hidden; }
+        .avatar img { width: 100%; height: 100%; }
         .info { flex-grow: 1; }
-        .name { font-weight: bold; margin-bottom: 5px; }
-        .tiers-row { display: flex; gap: 10px; }
-        .tier-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-        .icon { font-size: 1.2rem; }
-        .tag { font-size: 0.65rem; font-weight: bold; background: #30363d; padding: 1px 4px; border-radius: 3px; }
+        .name { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
+        .tiers-row { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tag { font-size: 0.7rem; font-weight: bold; padding: 3px 7px; border-radius: 12px; }
     </style>
 </head>
 <body>
 
-<!-- Botones de Modalidades -->
-<div class="tabs">
-    <button class="tab-btn">General</button>
-    <button class="tab-btn">Sword</button>
-    <button class="tab-btn">UHC</button>
-    <button class="tab-btn">Crystal</button>
-    <button class="tab-btn">Axe</button>
-</div>
-
-<!-- Tarjeta de KRONOS OG -->
+<!-- KRONOS OG -->
 <div class="player-card">
     <div class="rank-number">#1</div>
-    <div class="avatar"><img src="kronos.jpg" alt="Skin"></div>
+    <div class="avatar"><img src="https://mc-heads.net/avatar/KRONOS_OG1567" alt="Avatar"></div>
     <div class="info">
-        <div class="name">KRONOS OG</div>
+        <div class="name">KRONOS OG1567</div>
         <div class="tiers-row">
-            <div class="tier-item"><span class="icon">⚔️</span><span class="tag">LT2</span></div>
-            <div class="tier-item"><span class="icon">🍎</span><span class="tag">LT3</span></div>
-            <div class="tier-item"><span class="icon">🔮</span><span class="tag">LT5</span></div>
-            <div class="tier-item"><span class="icon">🔨</span><span class="tag">LT4</span></div>
+            <span class="tag" style="background:#4ade80">LT1</span>
+            <span class="tag" style="background:#facc15">LT3</span>
+            <span class="tag" style="background:#ef4444">LT5</span>
         </div>
     </div>
 </div>
 
-<!-- Jugadores adicionales (Asasin, Ryou, etc.) -->
+<!-- Asasin -->
 <div class="player-card">
     <div class="rank-number">#2</div>
-    <div class="avatar">👤</div>
-    <div class="name">Asasin</div>
+    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
+    <div class="info">
+        <div class="name">Asasin</div>
+        <div class="tiers-row">
+            <span class="tag" style="background:#facc15">LT3</span>
+        </div>
+    </div>
+</div>
+
+<!-- Ryou -->
+<div class="player-card">
+    <div class="rank-number">#3</div>
+    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
+    <div class="info">
+        <div class="name">Ryou</div>
+        <div class="tiers-row">
+            <span class="tag" style="background:#ef4444">LT5</span>
+        </div>
+    </div>
+</div>
+
+<!-- Conter -->
+<div class="player-card">
+    <div class="rank-number">#4</div>
+    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
+    <div class="info">
+        <div class="name">Conter</div>
+        <div class="tiers-row">
+            <span class="tag" style="background:#fb923c">LT4</span>
+        </div>
+    </div>
+</div>
+
+<!-- LastNight -->
+<div class="player-card">
+    <div class="rank-number">#5</div>
+    <div class="avatar"><img src="https://mc-heads.net/avatar/Steve" alt="Avatar"></div>
+    <div class="info">
+        <div class="name">LastNight</div>
+        <div class="tiers-row">
+            <span class="tag" style="background:#fb923c">LT4</span>
+        </div>
+    </div>
 </div>
 
 </body>
