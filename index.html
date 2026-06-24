@@ -8,14 +8,17 @@
         body { background-color: #0d1117; color: white; font-family: sans-serif; padding: 20px; }
         h1 { text-align: center; color: #ffffff; margin-bottom: 20px; }
         
+        /* Pestañas */
         .tabs { display: flex; gap: 8px; margin-bottom: 25px; overflow-x: auto; justify-content: center; flex-wrap: wrap; max-width: 800px; margin-left: auto; margin-right: auto; }
         .tab-btn { background: #161b22; border: 1px solid #30363d; color: white; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
         .tab-btn.active, .tab-btn:hover { background: #30363d; border-color: #4a5568; }
         
+        /* Tarjetas Generales */
         .player-card { background: #161b22; border-radius: 12px; display: flex; align-items: center; padding: 15px; margin-bottom: 15px; border: 1px solid #30363d; width: 100%; max-width: 550px; margin-left: auto; margin-right: auto; }
         .rank-number { font-size: 1.8rem; font-weight: bold; color: #f59e0b; margin-right: 15px; width: 40px; text-align: center; }
         .avatar { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .avatar img { width: 100%; height: 100%; object-fit: contain; }
+        /* Clase para skin personalizada */
         .avatar-skin { width: 55px; height: 55px; background: #21262d; border-radius: 8px; margin-right: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .avatar-skin img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -27,6 +30,7 @@
         .tags { display: flex; gap: 6px; flex-wrap: wrap; }
         .tag { font-size: 0.75rem; font-weight: bold; padding: 5px 10px; border-radius: 8px; display: flex; align-items: center; gap: 4px; background: #21262d; border: 1px solid #30363d; }
 
+        /* Tarjetas de Modo Específico */
         .specific-list { display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .spec-card { background: #161b22; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; padding: 15px 25px; border: 1px solid #30363d; width: 100%; max-width: 400px; }
         .spec-left { display: flex; align-items: center; gap: 15px; }
@@ -57,7 +61,7 @@
         <div class="avatar-skin"><img src="https://i.imgur.com/Q3rKrxl.jpeg" alt="Skin"></div>
         <div class="info">
             <div class="name-row">
-                <div class="name">KRONOS OG</div>
+                <div class="name">KRONOS OG1567</div>
                 <div class="points-badge">106 Pts</div>
             </div>
             <div class="tags">
@@ -151,6 +155,8 @@
         </div>
     </div>
 </div>
+
+<!-- (Aquí irían el resto de vistas: view-sword, view-uhc, etc.) -->
 
 <script>
     function switchView(targetMode) {
