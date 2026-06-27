@@ -10,18 +10,13 @@
         .tabs { display: flex; gap: 5px; margin-bottom: 20px; overflow-x: auto; justify-content: flex-start; padding: 5px; position: sticky; top: 0; background: #0d1117; z-index: 100; }
         .tab-btn { background: #161b22; border: 1px solid #30363d; color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.8rem; white-space: nowrap; }
         .tab-btn.active { background: #30363d; border-color: #58a6ff; }
-        .player-card { background: #161b22; border-radius: 10px; padding: 12px; margin-bottom: 10px; border: 1px solid #30363d; width: 95%; max-width: 400px; margin-left: auto; margin-right: auto; }
-        .main-info { display: flex; align-items: center; justify-content: space-between; }
-        .left-side { display: flex; align-items: center; }
+        .player-card { background: #161b22; border-radius: 10px; display: flex; align-items: center; padding: 12px; margin-bottom: 10px; border: 1px solid #30363d; width: 95%; max-width: 400px; margin-left: auto; margin-right: auto; }
         .avatar-skin { width: 45px; height: 45px; border-radius: 8px; margin-right: 12px; flex-shrink: 0; object-fit: cover; }
-        .info { display: flex; flex-direction: column; }
+        .info { flex-grow: 1; display: flex; flex-direction: column; }
         .name { font-weight: bold; font-size: 1rem; }
         .points { font-size: 0.8rem; color: #0284c7; font-weight: bold; }
-        .ranks-container { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid #30363d; }
-        .lt-tag { font-size: 0.75rem; background: #21262d; padding: 3px 8px; border-radius: 6px; color: #f59e0b; font-weight: bold; border: 1px solid #30363d; display: flex; align-items: center; gap: 4px; }
-        .modal-rank { font-size: 0.9rem; background: #30363d; padding: 4px 10px; border-radius: 6px; color: #f59e0b; font-weight: bold; }
+        .lt-tag { font-size: 0.8rem; color: #f59e0b; font-weight: bold; margin-top: 2px; }
         .view-content { display: none; }
-        .rank-num { margin-right: 15px; font-weight: bold; color: #f59e0b; width: 20px; font-size: 1.1rem; }
     </style>
 </head>
 <body>
@@ -40,84 +35,53 @@
     <button class="tab-btn" onclick="switchView('pot', this)">🧪 Pot</button>
 </div>
 
-<!-- VISTA GENERAL -->
+<!-- Vista General -->
 <div id="view-general" class="view-content" style="display: block;">
-    <div class="player-card">
-        <div class="main-info"><div class="left-side"><div class="rank-num">#1</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG</span><span class="points">106 Pts</span></div></div></div>
-        <div class="ranks-container">
-            <span class="lt-tag">⚔️ LT1</span><span class="lt-tag">🍎 LT3</span><span class="lt-tag">🪓 LT5</span><span class="lt-tag">🔮 LT3</span><span class="lt-tag">🔨 LT4</span><span class="lt-tag">🧪 LT5</span>
-        </div>
-    </div>
-    <div class="player-card">
-        <div class="main-info"><div class="left-side"><div class="rank-num">#2</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span><span class="points">34 Pts</span></div></div></div>
-        <div class="ranks-container">
-            <span class="lt-tag">⚔️ LT3</span><span class="lt-tag">🍎 LT5</span><span class="lt-tag">🪓 LT4</span><span class="lt-tag">🔮 LT5</span>
-        </div>
-    </div>
-    <div class="player-card">
-        <div class="main-info"><div class="left-side"><div class="rank-num">#3</div><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg" class="avatar-skin"><div class="info"><span class="name">Conter</span><span class="points">20 Pts</span></div></div></div>
-        <div class="ranks-container">
-            <span class="lt-tag">⚔️ LT3</span><span class="lt-tag">🪓 LT5</span><span class="lt-tag">🧪 LT4</span>
-        </div>
-    </div>
-    <div class="player-card">
-        <div class="main-info"><div class="left-side"><div class="rank-num">#4</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Ryou</span><span class="points">14 Pts</span></div></div></div>
-        <div class="ranks-container"><span class="lt-tag">⚔️ LT5</span></div>
-    </div>
-    <div class="player-card">
-        <div class="main-info"><div class="left-side"><div class="rank-num">#5</div><img src="https://i.postimg.cc/gcC5xDx1/Screenshot-2026-06-24-23-34-31-537-com-android-chrome-edit.jpg" class="avatar-skin"><div class="info"><span class="name">SrSlich</span><span class="points">14 Pts</span></div></div></div>
-        <div class="ranks-container"><span class="lt-tag">⚔️ LT5</span><span class="lt-tag">🪓 LT4</span></div>
-    </div>
-    <div class="player-card">
-        <div class="main-info"><div class="left-side"><div class="rank-num">#6</div><img src="https://i.postimg.cc/G9hFsp40/1000125162.jpg" class="avatar-skin"><div class="info"><span class="name">LastNight</span><span class="points">10 Pts</span></div></div></div>
-        <div class="ranks-container"><span class="lt-tag">🍎 LT4</span></div>
-    </div>
-    <div class="player-card">
-        <div class="main-info"><div class="left-side"><div class="rank-num">#7</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Perritos Frios</span><span class="points">8 Pts</span></div></div></div>
-        <div class="ranks-container"><span class="lt-tag">⚔️ LT5</span><span class="lt-tag">🔨 LT5</span></div>
-    </div>
+    <div class="player-card"><div style="margin-right:15px; font-weight:bold; color:#f59e0b;">#1</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG1567</span><span class="points">160 Pts</span></div></div>
+    <div class="player-card"><div style="margin-right:15px; font-weight:bold; color:#f59e0b;">#2</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span><span class="points">34 Pts</span></div></div>
+    <div class="player-card"><div style="margin-right:15px; font-weight:bold; color:#f59e0b;">#3</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Ryou</span><span class="points">14 Pts</span></div></div>
+    <div class="player-card"><div style="margin-right:15px; font-weight:bold; color:#f59e0b;">#4</div><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg" class="avatar-skin"><div class="info"><span class="name">Conter</span><span class="points">10 Pts</span></div></div>
+    <div class="player-card"><div style="margin-right:15px; font-weight:bold; color:#f59e0b;">#5</div><img src="https://i.postimg.cc/G9hFsp40/1000125162.jpg" class="avatar-skin"><div class="info"><span class="name">LastNight</span><span class="points">10 Pts</span></div></div>
+    <div class="player-card"><div style="margin-right:15px; font-weight:bold; color:#f59e0b;">#6</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Perritos Calientes</span><span class="points">8 Pts</span></div></div>
 </div>
 
-<!-- MODALIDADES -->
+<!-- Modalidades Verticales -->
 <div id="view-sword" class="view-content">
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#1</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG</span></div></div><div class="modal-rank">LT1</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#2</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span></div></div><div class="modal-rank">LT3</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#3</div><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg" class="avatar-skin"><div class="info"><span class="name">Conter</span></div></div><div class="modal-rank">LT3</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#4</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Perritos Frios</span></div></div><div class="modal-rank">LT5</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#5</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Ryou</span></div></div><div class="modal-rank">LT5</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#6</div><img src="https://i.postimg.cc/gcC5xDx1/Screenshot-2026-06-24-23-34-31-537-com-android-chrome-edit.jpg" class="avatar-skin"><div class="info"><span class="name">SrSlich</span></div></div><div class="modal-rank">LT5</div></div></div>
+    <div class="player-card"><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG1567</span><span class="lt-tag">LT1</span></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span><span class="lt-tag">LT3</span></div></div>
+    <div class="player-card"><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg" class="avatar-skin"><div class="info"><span class="name">Conter</span><span class="lt-tag">LT4</span></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Ryou</span><span class="lt-tag">LT5</span></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Perritos Calientes</span><span class="lt-tag">LT5</span></div></div>
 </div>
 
 <div id="view-uhc" class="view-content">
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#1</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG</span></div></div><div class="modal-rank">LT3</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#2</div><img src="https://i.postimg.cc/G9hFsp40/1000125162.jpg" class="avatar-skin"><div class="info"><span class="name">LastNight</span></div></div><div class="modal-rank">LT4</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#3</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span></div></div><div class="modal-rank">LT5</div></div></div>
+    <div class="player-card"><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG1567</span><span class="lt-tag">LT3</span></div></div>
+    <div class="player-card"><img src="https://i.postimg.cc/G9hFsp40/1000125162.jpg" class="avatar-skin"><div class="info"><span class="name">LastNight</span><span class="lt-tag">LT4</span></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span><span class="lt-tag">LT5</span></div></div>
 </div>
 
 <div id="view-axe" class="view-content">
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#1</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span></div></div><div class="modal-rank">LT4</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#2</div><img src="https://i.postimg.cc/gcC5xDx1/Screenshot-2026-06-24-23-34-31-537-com-android-chrome-edit.jpg" class="avatar-skin"><div class="info"><span class="name">SrSlich</span></div></div><div class="modal-rank">LT4</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#3</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG</span></div></div><div class="modal-rank">LT5</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#4</div><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg" class="avatar-skin"><div class="info"><span class="name">Conter</span></div></div><div class="modal-rank">LT5</div></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span><span class="lt-tag">LT4</span></div></div>
+    <div class="player-card"><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG1567</span><span class="lt-tag">LT5</span></div></div>
 </div>
 
 <div id="view-crystal" class="view-content">
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#1</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG</span></div></div><div class="modal-rank">LT3</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#2</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span></div></div><div class="modal-rank">LT5</div></div></div>
+    <div class="player-card"><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG1567</span><span class="lt-tag">LT3</span></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Asasin</span><span class="lt-tag">LT5</span></div></div>
 </div>
 
 <div id="view-smp" class="view-content"><div class="player-card"><div class="info"><span class="name">Sin registros</span></div></div></div>
 
 <div id="view-mazo" class="view-content">
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#1</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG</span></div></div><div class="modal-rank">LT4</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#2</div><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Perritos Frios</span></div></div><div class="modal-rank">LT5</div></div></div>
+    <div class="player-card"><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG1567</span><span class="lt-tag">LT4</span></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Perritos Calientes</span><span class="lt-tag">LT5</span></div></div>
 </div>
 
-<div id="view-nether" class="view-content"><div class="player-card"><div class="info"><span class="name">Sin registros</span></div></div></div>
+<div id="view-nether" class="view-content"><div class="player-card"><div class="info"><span class="name">Sin registros en Netherite Pot</span></div></div></div>
 
 <div id="view-pot" class="view-content">
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#1</div><img src="https://i.postimg.cc/DmJqcMP1/1000125178.jpg" class="avatar-skin"><div class="info"><span class="name">Conter</span></div></div><div class="modal-rank">LT4</div></div></div>
-    <div class="player-card"><div class="main-info"><div class="left-side"><div class="rank-num">#2</div><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG</span></div></div><div class="modal-rank">LT5</div></div></div>
+    <div class="player-card"><img src="https://mc-heads.net/avatar/Steve" class="avatar-skin"><div class="info"><span class="name">Ryou</span><span class="lt-tag">LT4</span></div></div>
+    <div class="player-card"><img src="https://i.imgur.com/Q3rKrxl.jpeg" class="avatar-skin"><div class="info"><span class="name">KRONOS OG1567</span><span class="lt-tag">LT5</span></div></div>
 </div>
 
 <script>
@@ -129,5 +93,4 @@
     }
 </script>
 </body>
-        </html>
-                                 
+</html>
